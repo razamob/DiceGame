@@ -91,5 +91,4 @@ function newGame(){
 buttonNew.addEventListener("click", function(){
     newGame();
 });
-cd 
 
