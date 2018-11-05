@@ -18,12 +18,10 @@ const active = document.querySelector(".active");
 const currentPlayer = document.querySelectorAll(".player-current-score");
 const playerScore = document.querySelectorAll(".player-score");
 let globalScore = document.querySelector('.active .player-score');
-//var score= document.querySelectorAll(".active .player-score");
 const rollButton = document.querySelector(".btn-roll");
 const holdButton = document.querySelector(".btn-hold");
 const buttonNew = document.querySelector(".btn-new");
 const playerName = document.querySelectorAll(".player-name");
-//var playerPanel = playerName.parentElement;
 let player1Score = document.getElementById("score-0");
 let player2Score = document.getElementById("score-1");
 let currentScore = document.querySelector(".active .player-current-box .player-current-score");
@@ -42,11 +40,6 @@ for(let i=0;i<2;i++){
 };
 
 loadGame();
-console.log(globalScore);
-//globalScore[1].innerHTML = 0;
-//check for active for each player. div class has active part of it!
-console.log(rollButton);
-//console.log(playerPanel);
 
 function scoreTracker(){
 currentScore = document.querySelector(".active .player-current-box .player-current-score");
@@ -65,8 +58,6 @@ if(randomNum === 1){
 }
 }
 
-
-
 rollButton.addEventListener("click", function(){
     scoreTracker();
 });
@@ -76,12 +67,11 @@ function updateGlobal(){
     globalScore = document.querySelector(".active .player-score");
     const round = parseInt(globalScore.innerHTML) + parseInt(currentScore.innerHTML);
     globalScore.innerHTML = round;
-    if(round >= 10){
+    if(round >= 20){
         alert(active.firstElementChild.innerHTML + " WINS!!!");
         newGame();
     }
     total = 0;
-    //global = 0;
     currentScore.innerHTML = 0;
     for(let i=0;i<2;i++){
         playerName[i].parentElement.classList.toggle("active");
@@ -89,7 +79,6 @@ function updateGlobal(){
 }
 
 holdButton.addEventListener("click", function(){
-    
     updateGlobal();
 });
 
@@ -98,8 +87,9 @@ function newGame(){
     playerTwo.classList.remove("active");
     loadGame();
 }
+
 buttonNew.addEventListener("click", function(){
     newGame();
-})
-
+});
+cd 
 
